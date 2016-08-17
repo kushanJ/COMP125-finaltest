@@ -1,3 +1,13 @@
+/*
+
+name:- Kushan Joshi
+id:- 300873962
+date:- 17 Aug
+rolling and putting image on canvas logic
+
+*/
+
+
 var core;
 (function (core) {
     "use strict";
@@ -12,7 +22,7 @@ var core;
         stage.enableMouseOver(20);
         createjs.Ticker.framerate = 60;
         createjs.Ticker.on("tick", gameLoop);
-
+	//creating content on canvas
 	var ctx=canvas.getContext("2d");
     	var img1=document.getElementById("die1");
 	img1.src = "Assets/images/1.png"
@@ -32,6 +42,7 @@ var core;
     function gameLoop() {
         stage.update();
     }
+
     function main() {
 	console.log("---in main---");
 	
@@ -44,7 +55,7 @@ var core;
 
 	
 	
-	
+	//click event on roll button	
 	var roll = document.getElementById("roll");
 	roll.addEventListener("click", function(e){
 		var die1 = Math.floor((Math.random() * 6) + 1);
@@ -52,7 +63,7 @@ var core;
 		console.log(typeof die1);
 		var die2 = Math.floor((Math.random() * 6) + 1);
 		console.log(die2);
-	for(var i = 0; i <=6 ; i++){
+	for(var i = 0; i <=6 ; i++){		//roll logic
 		if(die1 == i){
 			console.log("die1 ==" + die1)
 			img1.src = "Assets/images/"+die1+".png";
@@ -64,7 +75,7 @@ var core;
 			console.log(img2.src)
 		}
 	}
-
+	//setting up images
 	var bitmap1 = new createjs.Bitmap(img1);
 	stage.addChild(bitmap1);
 	var bitmap2 = new createjs.Bitmap(img2);
